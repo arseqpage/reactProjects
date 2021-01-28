@@ -1,0 +1,8 @@
+{
+  "short_name": "about-app",
+  "name": "Test about app",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
