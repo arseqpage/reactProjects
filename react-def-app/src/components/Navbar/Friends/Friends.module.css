@@ -1,0 +1,20 @@
+.friends__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.friendItem {
+  display: flex;
+  flex-direction: column;
+
+  width: 30%;
+}
+
+.friendItem img {
+  border-radius: 50%;
+}
+
+.friendItem span {
+  display: block;
+}
