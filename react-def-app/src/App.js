@@ -5,24 +5,18 @@ import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
-function App({ dispatch, appState, store }) {
+function App(props) {
   return (
     <Router>
       <div className="app-wrapper">
         <Header />
-        <Navbar dispatch={dispatch} />
+        <Navbar />
 
         <div className="app-wrapper-content">
-          {/* <Route path="/dialogs" component={Dialogs} />
-          <Route path="/profile" component={Profile} /> */}
-
-          <Route path="/dialogs" component={() => <Dialogs store={store} />} />
-          <Route
-            path="/profile"
-            render={() => <Profile profilePage={appState.profilePage} dispatch={dispatch} />}
-          />
+          <Route path="/dialogs" component={() => <DialogsContainer />} />
+          <Route path="/profile" render={() => <Profile />} />
         </div>
       </div>
     </Router>

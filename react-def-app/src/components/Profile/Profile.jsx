@@ -1,18 +1,13 @@
 import React from 'react';
-import classes from './Profile.module.css';
 
-import MyPosts from './MyPosts/MyPosts';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-export default function Profile({ profilePage, dispatch }) {
+export default function Profile(props) {
   return (
     <div>
       <ProfileInfo />
-      <MyPosts
-        postsData={profilePage.postsData}
-        newPostText={profilePage.newPostText}
-        dispatch={dispatch}
-      />
+      <MyPostsContainer />
     </div>
   );
 }
