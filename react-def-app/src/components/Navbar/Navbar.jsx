@@ -13,6 +13,9 @@ export default function Navbar({ state, dispatch }) {
       <NavLink className={classes.item} to="/dialogs" activeClassName={classes.active}>
         <div>Message</div>
       </NavLink>
+      <NavLink className={classes.item} to="/users" activeClassName={classes.active}>
+        <div>Users</div>
+      </NavLink>
       <a className={classes.item} href="#">
         <div>News</div>
       </a>

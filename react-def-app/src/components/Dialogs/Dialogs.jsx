@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import styles from './Dialogs.module.css';
 
 import DialogItem from './DialogItem/DialogItem';
@@ -23,8 +24,11 @@ export default function Dialogs(props) {
 
   const onNewMessageChange = (e) => {
     let body = e.target.value;
+
     props.updateNewMessageBody(body);
   };
+
+  if (!props.isAuth) return <Redirect to="/login" />;
 
   return (
     <div className={styles.dialogs}>

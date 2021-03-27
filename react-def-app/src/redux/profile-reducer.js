@@ -1,5 +1,8 @@
+import { usersAPI } from '../api/api';
+
 const ADD_POST = 'ADD_POST';
 const UPDATE_TEXT_IN_NEW_POST = 'UPDATE_TEXT_IN_NEW_POST';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
 const initialState = {
   postsData: [
@@ -25,19 +28,31 @@ const initialState = {
     },
   ],
   newPostText: 'textinarea',
+  profile: null,
 };
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST:
+    case ADD_POST: {
       const newPost = { id: 5, text: state.newPostText, likesCount: 2 };
-      state.postsData.push(newPost);
-      state.newPostText = '';
-      return state;
 
-    case UPDATE_TEXT_IN_NEW_POST:
-      state.newPostText = action.newText;
-      return state;
+      return {
+        ...state,
+        postsData: [...state.postsData, newPost],
+        newPostText: '',
+      };
+    }
+
+    case UPDATE_TEXT_IN_NEW_POST: {
+      return {
+        ...state,
+        newPostText: action.newText,
+      };
+    }
+
+    case SET_USER_PROFILE: {
+      return { ...state, profile: action.profile };
+    }
 
     default:
       return state;
@@ -54,5 +69,13 @@ export const updateTextInNewPostActionCreator = (text) => ({
   type: UPDATE_TEXT_IN_NEW_POST,
   newText: text,
 });
+
+export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
+
+export const getUserProfile = (userId) => (dispatch) => {
+  usersAPI.getProfile(userId).then((response) => {
+    dispatch(setUserProfile(response.data));
+  });
+};
 
 export default profileReducer;
