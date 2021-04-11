@@ -1,0 +1,10 @@
+.buttons {
+  padding: 10px 20px;
+
+  font-size: var(--font-size-medium);
+}
+
+.link {
+  display: inline-block;
+  margin: 10px;
+}
