@@ -7,10 +7,14 @@
   --color-violet: #781799;
 
   --border-radius-small: 5px;
+  --border-radius-medium: 10px;
 
+  --spacing-ultra-small: 5px;
   --spacing-small: 10px;
   --spacing-medium: 20px;
   --spacing-large: 30px;
+
+  --margin-list: 7px;
 
   --font-size-main: 16px;
   --font-size-header: 26px;
