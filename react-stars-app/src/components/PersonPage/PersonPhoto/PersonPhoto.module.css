@@ -1,6 +1,8 @@
 .container {
   width: 250px;
   height: 350px;
+
+  position: relative;
 }
 
 .photo {
@@ -11,4 +13,19 @@
 
   object-fit: cover;
   object-position: center center;
+}
+
+.favorite {
+  width: 35px;
+  height: 35px;
+
+  cursor: pointer;
+
+  position: absolute;
+  top: -15px;
+  right: -15px;
+
+  object-fit: cover;
+  object-position: center center;
+  filter: drop-shadow(0 0 10px rgb(0, 0, 0));
 }
