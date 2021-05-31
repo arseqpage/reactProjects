@@ -51,6 +51,11 @@ const Header = () => {
             SearchPage
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/fail" exact>
+            ErrorMessage
+          </NavLink>
+        </li>
       </ul>
 
       <Favorite />
